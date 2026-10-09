@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SmartHomePlan version="2">
+  <Info address="Str. Exemplu 1, Chisinau" author="Smart Home Planner" client="Client demo" company="" date="2026-10-08" name="Apartament demo" phone="">Toate circuitele de iluminat merg în tabloul principal. Spoturile 24V PWM se cablează 2x0.75 din driverul LED.</Info>
+  <Floor name="Parter">
+    <Settings ceilingHeight="270" grid="10" hiddenSections="" symbolScale="1" wallThickness="20" workPlane="0"/>
+    <Content>
+      <Room color="#e6b478" lx="0" ly="-60" name="Bucătărie" showArea="1" x="15" y="406">
+        <P x="0" y="0"/>
+        <P x="529" y="0"/>
+        <P x="529" y="279"/>
+        <P x="0" y="279"/>
+      </Room>
+      <Room color="#a0c88c" lx="-120" ly="0" name="Dormitor" showArea="1" x="15" y="15">
+        <P x="0" y="0"/>
+        <P x="529" y="0"/>
+        <P x="529" y="379"/>
+        <P x="0" y="379"/>
+      </Room>
+      <Room color="#78aadc" lx="0" ly="100" name="Living" showArea="1" x="556" y="15">
+        <P x="0" y="0"/>
+        <P x="429" y="0"/>
+        <P x="429" y="670"/>
+        <P x="0" y="670"/>
+      </Room>
+      <Wall closed="0" thickness="12" x="340" y="400">
+        <P x="0" y="0"/>
+        <P x="210" y="0"/>
+      </Wall>
+      <Wall closed="0" thickness="12" x="550" y="390">
+        <P x="0" y="0"/>
+        <P x="0" y="310"/>
+      </Wall>
+      <Wall closed="0" thickness="12" x="0" y="400">
+        <P x="0" y="0"/>
+        <P x="250" y="0"/>
+      </Wall>
+      <Wall closed="0" thickness="12" x="550" y="0">
+        <P x="0" y="0"/>
+        <P x="0" y="300"/>
+      </Wall>
+      <Wall closed="1" thickness="30" x="0" y="0">
+        <P x="0" y="0"/>
+        <P x="1000" y="0"/>
+        <P x="1000" y="700"/>
+        <P x="0" y="700"/>
+      </Wall>
+      <Strip icon="BandaLedWW.png" id="L11" key="Electrical/Smart House/Lighting/Banda Led WW" kind="strip" mode="circle" name="Banda Led WW" note="2x0.75 (24V)" nx="8" ny="8" on="1" radius="35" rgb="#ffd27f" rot="0" section="lighting" showNote="1" size="30" x="770" y="350">
+        <P x="90" y="0"/>
+      </Strip>
+      <Strip icon="BandaLedWW.png" id="L10" key="Electrical/Smart House/Lighting/Banda Led WW" kind="strip" mode="line" name="Banda Led WW" note="2x0.75 (24V)" nx="8" ny="8" on="1" radius="35" rgb="#ffd27f" rot="0" section="lighting" showNote="1" size="30" x="40" y="670">
+        <P x="0" y="0"/>
+        <P x="480" y="0"/>
+      </Strip>
+      <Device icon="TreeMotionSensor.svg" id="SN1" key="Electrical/Smart House/Security/Senzor de prezenta Loxone Tree" kind="generic" name="Senzor de prezenta Loxone Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="sensors" showNote="1" size="30" x="770" y="250"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L3" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="680" y="550"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L2" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="680" y="350"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L1" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="680" y="150"/>
+      <Device icon="TreeMotionSensor.svg" id="SN2" key="Electrical/Smart House/Security/Senzor de prezenta Loxone Tree" kind="generic" name="Senzor de prezenta Loxone Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="sensors" showNote="1" size="30" x="280" y="300"/>
+      <Device icon="AirSmokeDetector.svg" id="A1" key="Electrical/Smart House/Security/Detector de fum Air" kind="generic" name="Detector de fum Air" note="Air" nx="19" ny="-19" on="0" rot="0" section="security" showNote="1" size="30" x="420" y="120"/>
+      <Device icon="speaker_mounted.png" id="M1" key="Electrical/Smart House/Music/Difuzor Speaker 7" kind="speaker" name="Difuzor Speaker 7" note="2x1.5 LS" nx="19" ny="-19" on="1" radius="300" rot="0" section="music" showNote="1" size="30" x="700" y="600"/>
+      <Device icon="speaker_mounted.png" id="M2" key="Electrical/Smart House/Music/Difuzor Speaker 7" kind="speaker" name="Difuzor Speaker 7" note="2x1.5 LS" nx="19" ny="-19" on="1" radius="300" rot="0" section="music" showNote="1" size="30" x="880" y="600"/>
+      <Device icon="Jaluzele.svg" id="J1" key="Electrical/Smart House/Shading/Jaluzele / rolete" kind="generic" name="Jaluzele / rolete" note="4x1.5" nx="19" ny="-19" on="0" rot="0" section="shading" showNote="1" size="30" x="1000" y="120"/>
+      <Device beam="36" cct="3000" icon="24VDualToneDownlight.svg" id="L9" key="Electrical/Smart House/Lighting/LED Spot Dual Tone PWM" kind="light" mount="0" name="LED Spot Dual Tone PWM" note="3x0.75 (24V)" nx="19" ny="-19" on="0" rot="0" section="lighting" showNote="1" size="30" x="400" y="540"/>
+      <Device icon="Socket.png" id="P1" key="Electrical/Conventional/Socket/De baza" kind="generic" name="De baza" note="3x2.5" nx="19" ny="-19" on="0" rot="0" section="sockets" showNote="1" size="30" x="30" y="250"/>
+      <Device icon="TreeTouchWhite.svg" id="S2" key="Electrical/Smart House/Pushbutton/Touch Tree" kind="generic" name="Touch Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="switches" showNote="1" size="30" x="520" y="60"/>
+      <Device icon="Socket.png" id="P2" key="Electrical/Conventional/Socket/De baza" kind="generic" name="De baza" note="3x2.5" nx="19" ny="-19" on="0" rot="0" section="sockets" showNote="1" size="30" x="970" y="400"/>
+      <Device icon="RJ45Port.png" id="N1" key="Electrical/Conventional/IT/Retea RJ45" kind="generic" name="Retea RJ45" note="Cat6" nx="19" ny="-19" on="0" rot="0" section="network" showNote="1" size="30" x="970" y="300"/>
+      <Device icon="TreeTouchWhite.svg" id="S1" key="Electrical/Smart House/Pushbutton/Touch Tree" kind="generic" name="Touch Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="switches" showNote="1" size="30" x="575" y="360"/>
+      <Device icon="TreeTouchWhite.svg" id="S3" key="Electrical/Smart House/Pushbutton/Touch Tree" kind="generic" name="Touch Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="switches" showNote="1" size="30" x="300" y="420"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L5" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="860" y="350"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L6" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="860" y="550"/>
+      <Device beam="120" cct="3000" icon="TreePlafonieraWhite.svg" id="L7" key="Electrical/Smart House/Lighting/Plafoniera LOXONE RGBW Tree" kind="light" mount="0" name="Plafoniera LOXONE RGBW Tree" note="Tree" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="280" y="200"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L4" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="860" y="150"/>
+      <Device beam="36" cct="3000" icon="24VDualToneDownlight.svg" id="L8" key="Electrical/Smart House/Lighting/LED Spot Dual Tone PWM" kind="light" mount="0" name="LED Spot Dual Tone PWM" note="3x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="150" y="540"/>
+    </Content>
+  </Floor>
+  <Floor name="Etaj 1">
+    <Settings ceilingHeight="270" grid="10" hiddenSections="" symbolScale="1" wallThickness="20" workPlane="0"/>
+    <Content>
+      <Room color="#c8a0dc" lx="0" ly="-120" name="Dormitor 2" showArea="1" x="15" y="15">
+        <P x="0" y="0"/>
+        <P x="479" y="0"/>
+        <P x="479" y="670"/>
+        <P x="0" y="670"/>
+      </Room>
+      <Room color="#8cc8be" lx="0" ly="-120" name="Birou" showArea="1" x="506" y="15">
+        <P x="0" y="0"/>
+        <P x="479" y="0"/>
+        <P x="479" y="670"/>
+        <P x="0" y="670"/>
+      </Room>
+      <Wall closed="1" thickness="30" x="0" y="0">
+        <P x="0" y="0"/>
+        <P x="1000" y="0"/>
+        <P x="1000" y="700"/>
+        <P x="0" y="700"/>
+      </Wall>
+      <Wall closed="0" thickness="12" x="500" y="0">
+        <P x="0" y="0"/>
+        <P x="0" y="280"/>
+      </Wall>
+      <Wall closed="0" thickness="12" x="500" y="370">
+        <P x="0" y="0"/>
+        <P x="0" y="330"/>
+      </Wall>
+      <Device beam="60" cct="3000" icon="TreeSlimPendulumWhite.svg" id="L1" key="Electrical/Smart House/Lighting/Pendulum Slim Tree" kind="light" mount="0" name="Pendulum Slim Tree" note="Tree" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="250" y="350"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L2" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="680" y="250"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L3" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="1" rot="0" section="lighting" showNote="1" size="30" x="820" y="250"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L4" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="0" rot="0" section="lighting" showNote="1" size="30" x="680" y="480"/>
+      <Device beam="36" cct="3000" icon="LEDSpotWW.svg" id="L5" key="Electrical/Smart House/Lighting/LED Spot WW PWM" kind="light" mount="0" name="LED Spot WW PWM" note="2x0.75 (24V)" nx="19" ny="-19" on="0" rot="0" section="lighting" showNote="1" size="30" x="820" y="480"/>
+      <Device icon="TreeTouchWhite.svg" id="S1" key="Electrical/Smart House/Pushbutton/Touch Tree" kind="generic" name="Touch Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="switches" showNote="1" size="30" x="470" y="330"/>
+      <Device icon="TreeTouchWhite.svg" id="S2" key="Electrical/Smart House/Pushbutton/Touch Tree" kind="generic" name="Touch Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="switches" showNote="1" size="30" x="530" y="330"/>
+      <Device icon="TreeComfortSensor.svg" id="SN1" key="Electrical/Smart House/HVAC/Senzor de confort Tree" kind="generic" name="Senzor de confort Tree" note="Tree" nx="19" ny="-19" on="0" rot="0" section="sensors" showNote="1" size="30" x="250" y="600"/>
+      <Device icon="RJ45Port.png" id="N1" key="Electrical/Conventional/IT/Retea RJ45" kind="generic" name="Retea RJ45" note="Cat6" nx="19" ny="-19" on="0" rot="0" section="network" showNote="1" size="30" x="970" y="600"/>
+      <Device icon="Socket.png" id="P1" key="Electrical/Conventional/Socket/De baza" kind="generic" name="De baza" note="3x2.5" nx="19" ny="-19" on="0" rot="0" section="sockets" showNote="1" size="30" x="970" y="520"/>
+      <Device icon="DifuziorDePerete.svg" id="M1" key="Electrical/Smart House/Music/Difuzor de perete" kind="speaker" name="Difuzor de perete" note="2x1.5 LS" nx="19" ny="-19" on="1" radius="300" rot="0" section="music" showNote="1" size="30" x="30" y="350"/>
+    </Content>
+  </Floor>
+</SmartHomePlan>

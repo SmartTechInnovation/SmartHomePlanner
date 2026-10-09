@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Library name="Electrical" icon="electricalcabinet.svg" version="2">
+    <Sections>
+        <Section id="lighting" name="Lighting" name_ro="Iluminat" prefix="L" color="#F5A623" />
+        <Section id="switches" name="Switches" name_ro="Întrerupătoare" prefix="S" color="#4A90E2" />
+        <Section id="sensors" name="Sensors" name_ro="Senzori" prefix="SN" color="#2EAD4B" />
+        <Section id="security" name="Security" name_ro="Securitate" prefix="A" color="#D0021B" />
+        <Section id="shading" name="Shading" name_ro="Umbrire" prefix="J" color="#8B572A" />
+        <Section id="hvac" name="HVAC" name_ro="Climatizare (HVAC)" prefix="H" color="#E94E77" />
+        <Section id="music" name="Music" name_ro="Muzică" prefix="M" color="#9013FE" />
+        <Section id="sockets" name="Sockets" name_ro="Prize" prefix="P" color="#417505" />
+        <Section id="network" name="Network" name_ro="Rețea" prefix="N" color="#1BA39C" />
+        <Section id="electrical" name="Electrical panel" name_ro="Tablou electric" prefix="E" color="#4A4A4A" />
+        <Section id="other" name="Other" name_ro="Altele" prefix="X" color="#7B7B7B" />
+    </Sections>
+    <Category name="Smart House" icon="smart-home.png">
+        <Category name="Lighting" icon="LEDSpotWW.svg" section="lighting">
+            <Item name="LED Spot WW PWM" icon="LEDSpotWW.svg" section="lighting" type="light" size="30" note="3x1.5 (24V)" doc="" shop="" beam="36" cct="3000" tile="0"/>
+            <Item name="LED Spot One Tone PWM" icon="PwmControlledSpot.svg" section="lighting" type="light" size="30" note="2x1.5 (24V)" doc="" shop="" beam="36" cct="3000" tile="0"/>
+            <Item name="LED Spot Dual Tone PWM" icon="24VDualToneDownlight.svg" section="lighting" type="light" size="30" note="3x1.5 (24V)" doc="" shop="" beam="36" cct="3000" tile="0"/>
+            <Item name="Tree RGBW LED Spot" icon="TreeRGBWLedSpot.svg" section="lighting" type="light" size="30" note="Tree" doc="" shop="" beam="36" cct="3000" tile="0"/>
+            <Item name="Circuit de iluminat comutat" icon="CircuitDeIluminatComutat.svg" section="lighting" type="light" size="30" note="2x1.5" doc="" shop="" beam="120" cct="3000" tile="0"/>
+            <Item name="Circuit de iluminat wireless" icon="CircuitDeIluminareComutatWireless.svg" section="lighting" type="light" size="30" note="2x1.5" doc="" shop="" beam="120" cct="3000" tile="0"/>
+            <Item name="Circuit de iluminat dimabil 230V" icon="CircuitDeIluminareComutatWireless.svg" section="lighting" type="light" size="30" note="2x1.5" doc="" shop="" beam="120" cct="3000" tile="0"/>
+            <Item name="Circuit de iluminat dimabil wireles" icon="CircuitDeIluminareDimabilWireless.svg" section="lighting" type="light" size="30" note="2x1.5" doc="" shop="" beam="120" cct="3000" tile="0"/>
+            <Item name="Circuit de iluminat dimabil 0-10V" icon="CircuitDeIluminare0_10V.svg" section="lighting" type="light" size="30" note="3x1.5 + 2x0.75" doc="" shop="" beam="120" cct="3000" tile="0"/>
+            <Item name="Aplica pe pere comutat" icon="CircuitDeiluminareComutatPePerete.svg" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="90" cct="3000" tile="0"/>
+            <Item name="Aplica pe perete dimabila" icon="CircuitDeiluminareComutatPePerete.svg" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="90" cct="3000" tile="0"/>
+            <Item name="Lampa de perete comutat Tree" icon="TreeCircuitDeiluminareComutat.svg" section="lighting" type="light" size="30" note="Tree" doc="" shop="" beam="90" cct="3000" tile="0"/>
+            <Item name="Lampa de perete comutat Air" icon="AirCircuitDeIluminareComutatPePerete.svg" section="lighting" type="light" size="30" note="2x1.5 Air" doc="" shop="" beam="90" cct="3000" tile="0"/>
+            <Item name="DMX" icon="DMX.svg" section="lighting" type="light" size="30" note="Cat6" doc="" shop="" beam="120" cct="3000" />
+            <Item name="DALI" icon="DALI.svg" section="lighting" type="light" size="30" note="3x1.5 + Cat5E" doc="" shop="" beam="120" cct="3000">
+                <Variant name="Wire" icon="DALI.svg" />
+                <Variant name="Air" icon="AirDaliModule.svg" note="Air" />
+            </Item>
+            <Item name="Banda Led White" icon="BandaLedWhite.png" section="lighting" type="strip" size="30" note="2x1.5 (24V)" doc="" shop="" color="#FFF4E0" glow="35">
+                <Variant name="Generic" icon="BandaLedWhite.png" />
+                <Variant name="Tree" icon="TreeBandaLedWhite.svg" note="Tree"/>
+                <Variant name="Air" icon="TreeBandaLedWhite.svg" note="Air" />
+            </Item>
+            <Item name="Banda Led WW" icon="BandaLedWW.png" section="lighting" type="strip" size="30" note="3x1.5 (24V)" doc="" shop="" color="#FFD27F" glow="35">
+                <Variant name="Generic" icon="BandaLedWW.png" />
+                <Variant name="Tree" icon="TreeBandaLedWW.svg" note="Tree" />
+                <Variant name="Air" icon="TreeBandaLedWW.svg" note="Air" />
+            </Item>
+            <Item name="Banda Led RGB" icon="BandaLedRGBW.png" section="lighting" type="strip" size="30" note="4x1.5 (24V)" doc="" shop="" color="#FF4FD8" glow="35">
+                <Variant name="Generic" icon="BandaLedRGBW.png" />
+                <Variant name="Tree" icon="TreeBandaLedRGBW.svg" note="Tree" />
+                <Variant name="Air" icon="TreeBandaLedRGBW.svg" note="Air" />
+            </Item>
+            <Item name="Banda Led RGBW" icon="BandaLedRGBW.png" section="lighting" type="strip" size="30" note="5x1.5 (24V)" doc="" shop="" color="#FF4FD8" glow="35">
+                <Variant name="Generic" icon="BandaLedRGBW.png" />
+                <Variant name="Tree" icon="TreeBandaLedRGBW.svg" note="Tree" />
+                <Variant name="Air" icon="TreeBandaLedRGBW.svg" note="Air" />
+            </Item>
+            <Item name="Pendulum Slim Tree" icon="TreeSlimPendulumWhite.svg" section="lighting" type="light" size="30" note="Tree" doc="" shop="" beam="60" cct="3000">
+                <Variant name="White" icon="TreeSlimPendulumWhite.svg" />
+                <Variant name="Anthracite" icon="TreeSlimPendulumAnthracite.svg" />
+            </Item>
+            <Item name="Pendulum Slim PWM" icon="Led pendulum slim PWM white.svg" section="lighting" type="light" size="30" note="2x1.5 (24V)" doc="" shop="" beam="60" cct="3000">
+                <Variant name="White" icon="Led pendulum slim PWM white.svg" />
+                <Variant name="Anthracite" icon="PendulumSlimPWM.svg" />
+            </Item>
+            <Item name="Spot Exterior Tree" icon="TreeLedCeilingRGBWSpot.svg" section="lighting" type="light" size="30" note="Tree" doc="" shop="" beam="36" cct="3000">
+                <Variant name="White" icon="TreeLedCeilingRGBWSpot.svg" />
+                <Variant name="Anthracite" icon="TreeLedCeilingRGBWSpotDark.svg" />
+            </Item>
+            <Item name="Spot Exterior PWM" icon="Led Ceiling spot WW PWM white.svg" section="lighting" type="light" size="30" note="2x1.5 (24V)" doc="" shop="" beam="36" cct="3000">
+                <Variant name="White" icon="Led Ceiling spot WW PWM white.svg" />
+                <Variant name="Anthracite" icon="LEDCeilingSpotWWPwm.svg" />
+            </Item>
+            <Item name="Plafoniera LOXONE RGBW Tree" icon="TreePlafonieraWhite.svg" section="lighting" type="light" size="30" note="Tree" doc="" shop="" beam="120" cct="3000">
+                <Variant name="White" icon="TreePlafonieraWhite.svg" />
+                <Variant name="Anthracite" icon="TreePlafonieraAntracite.svg" />
+            </Item>
+            <Item name="Plafoniera LOXONE RGBW Air" icon="AirPlafonieraWhite.svg" section="lighting" type="light" size="30" note="Air" doc="" shop="" beam="120" cct="3000">
+                <Variant name="White" icon="AirPlafonieraWhite.svg" />
+                <Variant name="Anthracite" icon="AirPlafonieraAntracite.svg" />
+            </Item>
+            <Item name="Table Lamp Air" icon="AirTablelight.svg" section="lighting" type="light" size="30" note="Air" doc="" shop="" beam="120" cct="3000" />
+        </Category>
+        <Category name="Pushbutton" icon="Intrerupator cu un buton.svg" section="switches">
+            <Item name="Intrerupator cu un buton" icon="Intrerupator cu un buton.svg" section="switches" type="generic" size="30" note="Cat6" doc="" shop="https://bricomol.md/produs/445005-intrerupator-cu-revenire-pulsant-10a-1p-1-mod-negru-antracit-ave-italy/" tile="0"/>
+            <Item name="Intrerupator cu doua butoane" icon="Intrerupator cu doua butoane.svg" section="switches" type="generic" size="30" note="Cat6" doc="" shop="https://bricomol.md/produs/445056-intrerupator-cu-revenire-dublu-1pno-1pno-10a-tekla-1m-ave/" tile="0"/>
+            <Item name="Touch for Nano" icon="NanoTouchWhite.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100154-touch-for-nano-white">
+                <Variant name="White" icon="NanoTouchWhite.svg" />
+                <Variant name="Anthracite" icon="NanoTouchAnthracite.svg" />
+            </Item>
+            <Item name="Touch Tree" icon="TreeTouchWhite.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100221-touch-tree-white">
+                <Variant name="White" icon="TreeTouchWhite.svg" />
+                <Variant name="Anthracite" icon="TreeTouchAnthracite.svg" />
+            </Item>
+            <Item name="Touch Air" icon="AirTouchWhite.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100155-touch-air-white">
+                <Variant name="White" icon="AirTouchWhite.svg" />
+                <Variant name="Anthracite" icon="AirTouchAnthracite.svg" />
+            </Item>
+            <Item name="Touch Pure Tree" icon="TreeTouchPure.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100461-touch-pure-tree-white">
+                <Variant name="White" icon="TreeTouchPure.svg" />
+                <Variant name="Anthracite" icon="TreeTouchPureAntrachite.svg" />
+            </Item>
+            <Item name="Touch Pure Air" icon="AirTouchPure.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100463-touch-pure-air-white">
+                <Variant name="White" icon="AirTouchPure.svg" />
+                <Variant name="Anthracite" icon="AirTouchPuteAntracite.svg" />
+            </Item>
+            <Item name="Touch Surface Tree" icon="TreeTouchSurface.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="" />
+            <Item name="Touch Surface Air" icon="AirTouchSurface.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Touch Nightlight Air" icon="AirTouchNigtlight.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Touch and Grill Air" icon="AirTouchGrill.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Touch Pure Flex Tree" icon="TreeTouchFlexWhite.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="White" icon="TreeTouchFlexWhite.svg" />
+                <Variant name="Anthracite" icon="TreeTouchFlexAntracite.svg" />
+            </Item>
+            <Item name="Touch Pure Flex Air" icon="AirTouchFlexWhite.svg" section="switches" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100284-touch-surface-tree">
+                <Variant name="White" icon="AirTouchFlexWhite.svg" />
+                <Variant name="Anthracite" icon="AirTouchFlexAntracite.svg" />
+            </Item>
+            <Item name="Touch Pure CO2 Tree" icon="TreeTouchPure.svg" section="switches" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100285-touch-surface-air">
+                <Variant name="White" icon="TreeTouchPure.svg" />
+                <Variant name="Anthracite" icon="AirTouchPuteAntracite.svg" />
+            </Item>
+        </Category>
+        <Category name="Security" icon="WallMotionSensor.svg" section="security">
+            <Item name="Detector de fum Air" icon="AirSmokeDetector.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100142-smoke-detector-air" />
+            <Item name="Senzor Miscare Perete" icon="WallMotionSensor.svg" section="sensors" type="generic" size="30" note="3x1.5" doc="" shop="">
+                <Variant name="White" icon="WallMotionSensor.svg" />
+                <Variant name="Anthracite" icon="WallMotionSensorDark.svg" />
+            </Item>
+            <Item name="Senzor Miscare Exterior" icon="ExteriorMotionSensor.svg" section="sensors" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Senzor Scurgere apa-Air" icon="AirWaterSensor.svg" section="sensors" type="generic" size="30" note="Cat5" doc="" shop="https://shop.loxone.com/enen/product/100668-water-sensor-air" />
+            <Item name="NFC Code Touch Tree" icon="TreeNfcCodeTouchWhite.svg" section="security" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100481-nfc-code-touch-tree-white">
+                <Variant name="White" icon="TreeNfcCodeTouchWhite.svg" />
+                <Variant name="Anthracite" icon="TreeNfcCodeTouchAnthracite.svg" />
+            </Item>
+            <Item name="NFC Code Touch Air" icon="AirNfcCodeTouchWhite.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100483-nfc-code-touch-air-white">
+                <Variant name="White" icon="AirNfcCodeTouchWhite.svg" />
+                <Variant name="Anthracite" icon="AirNfcCodeTouchAnthracite.svg" />
+            </Item>
+            <Item name="NFC Code Touch for Nano" icon="NanoNfcCodeTouchWhite.svg" section="security" type="generic" size="30" note="" doc="" shop="https://shop.loxone.com/enen/product/100301-nfc-code-touch-nano-white">
+                <Variant name="White" icon="NanoNfcCodeTouchWhite.svg" />
+                <Variant name="Anthracite" icon="NanoNfCodeTouchAntrachite.svg" />
+            </Item>
+            <Item name="Loxone Alarm Sirene" icon="TreeAlarmSirene.svg" section="security" type="generic" size="30" note="" doc="" shop="https://shop.loxone.com/enen/product/100313-alarm-siren-tree">
+                <Variant name="Tree" icon="TreeAlarmSirene.svg" note="Tree" />
+                <Variant name="Air" icon="AirAlarmSirene.svg" note="Air" />
+            </Item>
+            <Item name="Window Handle Air" icon="AirWindowDoorHandle.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100177-window-handle-air" />
+            <Item name="Senzor de prezenta Loxone Tree" icon="TreeMotionSensor.svg" section="sensors" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100422-presence-sensor-tree-white">
+                <Variant name="White" icon="TreeMotionSensor.svg" />
+                <Variant name="Anthracite" icon="TreeMotionSensorDark.svg" />
+            </Item>
+            <Item name="Senzor de prezenta Loxone Air" icon="AirMotionSensor.svg" section="sensors" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100420-presence-sensor-air-white" tile="0">
+                <Variant name="White" icon="AirMotionSensor.svg" />
+                <Variant name="Anthracite" icon="AirMotionSensorDark.svg" />
+            </Item>
+            <Item name="Senzor de prezenta incorporat Tree" icon="TreeMotionSensorIncorporat.svg" section="sensors" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100466-flush-mounted-presence-sensor-tree-white" tile="0">
+                <Variant name="White" icon="TreeMotionSensorIncorporat.svg" />
+                <Variant name="Anthracite" icon="TreeMotionSensorIncorporatDark.svg" />
+            </Item>
+            <Item name="Contact usa si fereastra Air" icon="AirContactDoorWindow.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100666-door-window-contact-air-white" />
+            <Item name="Button Air" icon="AirButton.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100465-button-air" />
+            <Item name="Wrist Button Air" icon="AirBracelet.svg" section="security" type="generic" size="30" note="Air" doc="" shop="https://shop.loxone.com/enen/product/100496-wrist-button-air" />
+            <Item name="Intercom" icon="IntercomWhite.svg" section="security" type="generic" size="30" note="Cat5E" doc="" shop="https://shop.loxone.com/enen/product/100484-intercom-white">
+                <Variant name="White" icon="IntercomWhite.svg" />
+                <Variant name="Anthracite" icon="IntercomAntracite.svg" />
+            </Item>
+            <Item name="Intercom + NFC Code Touch" icon="Intercom+NfcCodeTouchWjite.svg" section="security" type="generic" size="30" note="Cat5E" doc="" shop="">
+                <Variant name="White" icon="Intercom+NfcCodeTouchWjite.svg" />
+                <Variant name="Anthracite" icon="Intercom+NfcCodeTouchDark.svg" />
+            </Item>
+            <Item name="Contact Magnetic Generic" icon="Contactmagnetic.svg" section="security" type="generic" size="30" note="Cat6" doc="" shop="https://shop.loxone.com/enen/product/200113-window-door-contact" />
+        </Category>
+        <Category name="Shading" icon="Jaluzele.svg" section="shading">
+            <Item name="Jaluzele / rolete" icon="Jaluzele.svg" section="shading" type="generic" size="30" note="4x1.5" doc="" shop="">
+                <Variant name="Relay" icon="Jaluzele.svg" />
+                <Variant name="Tree" icon="TreeJaluzele.svg" note="Tree" />
+                <Variant name="Air" icon="AirJaluzele.svg" note="Air" />
+            </Item>
+            <Item name="Draperie" icon="Draperii.svg" section="shading" type="generic" size="30" note="2x1.5 + Cat5E" doc="" shop="">
+                <Variant name="Relay" icon="Draperii.svg" />
+                <Variant name="Tree" icon="TreeDraperii.svg" note="Tree" />
+                <Variant name="Air" icon="AirDraperii.svg" note="Air" />
+            </Item>
+            <Item name="Marchiza / Copertina" icon="Marchiza.svg" section="shading" type="generic" size="30" note="4x1.5" doc="" shop="">
+                <Variant name="Relay" icon="Marchiza.svg" />
+                <Variant name="Tree" icon="TreeMarchiza.svg" note="Tree" />
+                <Variant name="Air" icon="AirMarchiza.svg" note="Air" />
+            </Item>
+        </Category>
+        <Category name="HVAC" icon="SplitUnitAC.svg" section="hvac">
+            <Item name="Senzor de temperatura 1-wire" icon="Senzor de temperatura 1-wire pentru fluide.png" section="sensors" type="generic" size="30" note="Cat5 (1-Wire)" doc="" shop="https://shop.loxone.com/enen/product/200077-temperature-probe-1-wire" />
+            <Item name="Senzor de temperatura 1-wire" icon="TempSensor2.svg" section="sensors" type="generic" size="30" note="Cat5 (1-Wire)" doc="" shop="https://shop.loxone.com/enen/product/200109-temperature-sensor-set-1-wire" />
+            <Item name="Senzor de temp/umiditate" icon="Umiditate.png" section="sensors" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100264-room-comfort-sensor-air-white" />
+            <Item name="Radiator" icon="ControlRadiator.png" section="hvac" type="generic" size="30" note="Tree" doc="" shop="https://shop.loxone.com/enen/product/100603-valve-actuator-air">
+                <Variant name="Relay" icon="ControlRadiator.png" />
+                <Variant name="Tree" icon="TreeControlRadiator.svg" note="Tree" />
+                <Variant name="Air" icon="AirControlRadiator.svg" note="Air" />
+            </Item>
+            <Item name="Incalzire in pardoseala" icon="PardosealaCalda.png" section="hvac" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Relay" icon="PardosealaCalda.png" />
+                <Variant name="Tree" icon="TreePardosealaCalda.svg" note="Tree" />
+                <Variant name="Air" icon="AirPardosealaCalda.svg" note="Air" />
+            </Item>
+            <Item name="Racire in tavan" icon="RacirePardoseala.png" section="hvac" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Relay" icon="RacirePardoseala.png" />
+                <Variant name="Tree" icon="TreeRacirePardoseala.svg" note="Tree" />
+                <Variant name="Air" icon="AirRacirePardoseala.svg" note="Air" />
+            </Item>
+            <Item name="Split unit-aer conditionat" icon="SplitUnitAC.svg" section="hvac" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Ventilator" icon="Ventilator.svg" section="hvac" type="generic" size="30" note="2x1.5" doc="" shop="" tile="0"/>
+            <Item name="Fan Coil" icon="ExternUnitHeatPump.svg" section="hvac" type="generic" size="30" note="4x1.5" doc="" shop="">
+                <Variant name="Relay" icon="ExternUnitHeatPump.svg" />
+                <Variant name="Air" icon="AirExternalUnitHeatPump.svg" note="Air" />
+            </Item>
+            <Item name="Heat pump" icon="ExternUnitHeatPump.svg" section="hvac" type="generic" size="30" note="Cat6" doc="" shop="">
+                <Variant name="Modbus" icon="ExternUnitHeatPump.svg" />
+                <Variant name="Air" icon="AirExternalUnitHeatPump.svg" note="Air" />
+            </Item>
+            <Item name="Pompa" icon="circulation-pump.png" section="hvac" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Senzor de confort Tree" icon="TreeComfortSensor.svg" section="sensors" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="White" icon="TreeComfortSensor.svg" />
+                <Variant name="Anthracite" icon="TreeComfortSensorAntracite.svg" />
+            </Item>
+            <Item name="Senzor de confort Air" icon="AirComfortSensorWhite.svg" section="sensors" type="generic" size="30" note="Air" doc="" shop="">
+                <Variant name="White" icon="AirComfortSensorWhite.svg" />
+                <Variant name="Anthracite" icon="AirComfortSensorDark.svg" />
+            </Item>
+            <Item name="Leaf Ventilation unit Tree" icon="TreeLeafVentilation.svg" section="hvac" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Tree" icon="TreeLeafVentilation.svg" note="Tree" />
+                <Variant name="Air" icon="AirLeafVentilation.svg" note="Air" />
+            </Item>
+            <Item name="Colector solar" icon="SolarWaterHeater.svg" section="hvac" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="AC Control Air Module" icon="AirACControl.svg" section="hvac" type="generic" size="30" note="Air" doc="" shop="" />
+        </Category>
+        <Category name="Music" icon="speaker_mounted.png" section="music">
+            <Item name="Difuzor Speaker 7" icon="speaker_mounted.png" section="music" type="speaker" size="30" note="" doc="" shop="" radius="300" >
+                <Variant name="Passive" icon="speaker_mounted.png" note="2 x 1.5 LS" />
+                <Variant name="Master"  icon="speaker_mounted.png" note="2 x 1.5 + Cat5E" />
+                <Variant name="Client"  icon="speaker_mounted.png" note="2 x 1.5 + Cat5E" />
+            </Item>
+            <Item name="Difuzor Speaker 10" icon="Speaker10.svg" section="music" type="speaker" size="30" note="" doc="" shop="" radius="300">
+                <Variant name="Passive" icon="Speaker10.svg" note="2 x 1.5 LS" />
+                <Variant name="Master"  icon="Speaker10.svg" note="2 x 1.5 + Cat5E" />
+                <Variant name="Client"  icon="Speaker10.svg" note="2 x 1.5 + Cat5E" />
+            </Item>
+            <Item name="Difuzor de perete Pasive" icon="DifuziorDePerete.svg" section="music" type="speaker" size="30" note="2x1.5 LS" doc="" shop="" radius="300" />
+            <Item name="Satellite Speaker IP64 Passive" icon="SateliteSpeakerIP64.svg" section="music" type="speaker" size="30" note="2x1.5 LS" doc="" shop="" radius="300" />
+            <Item name="Generic SPDIF Output" icon="GenericSPDIF Output.svg" section="music" type="generic" size="30" note="Cat5" doc="" shop="" />
+            <Item name="Generic Line Out" icon="GenericLineOut.svg" section="music" type="generic" size="30" note="Cat5" doc="" shop="" />
+            <Item name="Generic Amplified Output" icon="generic_amplified_output.svg" section="music" type="generic" size="30" note="Cat5" doc="" shop="" />
+            <Item name="Generic Line In" icon="generic_line_in.svg" section="music" type="generic" size="30" note="Cat5" doc="" shop="" />
+        </Category>
+        <Category name="ETC" icon="TreeStatieMeteo.svg" section="other">
+            <Item name="Nano DI Tree" icon="TreeNanoDI.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="" />
+            <Item name="Priza comutabila Air" icon="AirPrizaComutabila.svg" section="sockets" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Statie Meteo" icon="TreeStatieMeteo.svg" section="sensors" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Tree" icon="TreeStatieMeteo.svg" note="Tree" />
+                <Variant name="Air" icon="AirStatieMeteo.svg" note="Air" />
+            </Item>
+            <Item name="Hormann Air" icon="AirHormann.svg" section="other" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Poarta de intrare controlata" icon="Door.png" section="other" type="generic" size="30" note="3x1.5 + Cat6" doc="" shop="" />
+            <Item name="Dispozitiv generic RS232" icon="GenericRS232.svg" section="other" type="generic" size="30" note="" doc="" shop="" />
+            <Item name="Dispozitiv generic RS485" icon="GenericRS485.svg" section="other" type="generic" size="30" note="Cat6" doc="" shop="" />
+            <Item name="Dispozitiv generic Modbus" icon="WiredModbus.svg" section="other" type="generic" size="30" note="Cat6" doc="" shop="" />
+            <Item name="Iesire generica de releu 16A" icon="IesireReleuGenerica16A.svg" section="other" type="generic" size="30" note="2x1.5" doc="" shop="" />
+            <Item name="Intrare binara generica 24V" icon="IntrareGenericaBinara24V.svg" section="other" type="generic" size="30" note="2x0.5" doc="" shop="" />
+            <Item name="Intrare generica 0-10V" icon="IntrareGenerica0_10V.svg" section="other" type="generic" size="30" note="2x0.5" doc="" shop="" />
+            <Item name="Iesire generica 0-10V" icon="Iesiregenerica0_10V.svg" section="other" type="generic" size="30" note="2x0.5" doc="" shop="" />
+            <Item name="Nano 2 Relay Tree" icon="TreeNano2Relay.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="" />
+            <Item name="Tree to Air Bridge" icon="Tree2AirBridge.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="" />
+            <Item name="Nano Motor Controller Tree" icon="TreeMotorController.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Tree" icon="TreeMotorController.svg" note="Tree" />
+                <Variant name="Air" icon="AirMotorController.svg" note="Air" />
+            </Item>
+            <Item name="Generic potential free output" icon="GenericPotentialfreeoutput.svg" section="other" type="generic" size="30" note="2x1.5" doc="" shop="" />
+            <Item name="Generic 0/4-20mA input" icon="Generic0_4-20maInput.svg" section="other" type="generic" size="30" note="2x0.5" doc="" shop="" />
+            <Item name="Belimo" icon="TreeBelimo.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="">
+                <Variant name="Tree" icon="TreeBelimo.svg" note="Tree" />
+                <Variant name="Air" icon="AirBelimo.svg" note="Air" />
+            </Item>
+            <Item name="Modbus Air" icon="AirModbusModule.svg" section="other" type="generic" size="30" note="Air" doc="" shop="" />
+            <Item name="Generic M-Bus Device" icon="M_Bus.svg" section="other" type="generic" size="30" note="Cat6" doc="" shop="" />
+            <Item name="iPad Wallmount 10.9" icon="Tabletmounting.png" section="other" type="generic" size="30" note="3x1.5 (12V)" doc="" shop="">
+                <Variant name="Silver" icon="Tabletmounting.png" />
+                <Variant name="Anthracite" icon="Tabletmounting.png" />
+            </Item>
+            <Item name="WallBox Charger Tree" icon="WallBox.svg" section="other" type="generic" size="30" note="" doc="" shop="">
+                <Variant name="Wallbox 7.4kW 32A" icon="WallBox.svg" note="3x6 mm2 + Cat6"/>
+                <Variant name="Wallbox 11 kW 16A" icon="WallBox.svg" note="5x4 mm2 + Cat6"/>
+                <Variant name="Wallbox 22 kW 32A" icon="WallBox.svg" note="5x6 mm2 + Cat6"/>
+            </Item >
+            <Item name="WallBox Charger Air" icon="WallBox.svg" section="other" type="generic" size="30" note="" doc="" shop="">
+                <Variant name="Wallbox 7.4kW 32A" icon="WallBox.svg" note="3x6 mm2" />
+                <Variant name="Wallbox 11 kW 16A" icon="WallBox.svg" note="5x4 mm2" />
+                <Variant name="Wallbox 22 kW 32A" icon="WallBox.svg" note="5x6 mm2" />
+            </Item >
+
+            <Item name="Energy Meter 1-Phase Tree" icon="Energy_Meter_1-Phase_Tree.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="" />
+            <Item name="Energy Meter 3-Phase Tree" icon="Energy_Meter_3-Phase_Tree.svg" section="other" type="generic" size="30" note="Tree" doc="" shop="" />
+        </Category>
+    </Category>
+    <Category name="Conventional" icon="Socket.png">
+        <Category name="Lighting" icon="switched_light_conventional.png" section="lighting">
+            <Item name="Iluminat cu comutare conventional" icon="switched_light_conventional.png" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="120" cct="3000" />
+            <Item name="Aplica de perete comutat" icon="hagyomanyos_oldalfali_vilagitas.png" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="90" cct="3000" />
+            <Item name="Plafoniera dimabila" icon="hagyomanyos_dimmelt_vilagitas.png" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="120" cct="3000" />
+            <Item name="Aplica de perete dimabila" icon="hagyomanyos_dimmelt_oldalfali_vilagitas.png" section="lighting" type="light" size="30" note="3x1.5" doc="" shop="" beam="90" cct="3000" />
+        </Category>
+        <Category name="Switch" icon="single-pole_switch.svg" section="switches">
+            <Item name="Intrerupator cu 1 pol" icon="single-pole_switch.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Intrerupator cu 2 poli" icon="Intrerupator2poli.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Intrerupator intermediar" icon="IntrerupatorIntermediar.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Intrerupator serie" icon="IntrerupatorSerie.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Comutator basculant" icon="ComutatorBasculant.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Intrerupator dublu cu 2 cai" icon="Intrerupatordublu2cai.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Circuit de iluminat dimabil" icon="dimmer_switch.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Comanda pentru jaluzele" icon="blinds_rocker_switch.png" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Buton de umbrire" icon="blinds_push_rocker_insert.svg" section="switches" type="generic" size="30" note="3x1.5" doc="" shop="" />
+        </Category>
+        <Category name="Socket" icon="Socket.png" section="sockets">
+            <Item name="De baza" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Protectie apa" icon="ProtectieApa.png" section="sockets" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Priza cu nivel sporit de protectie" icon="nivelSporitdeProtectie.png" section="sockets" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Masina de spalat vase" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5 (16A)" doc="" shop="" />
+            <Item name="Masina de splat haine" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5 (16A)" doc="" shop="" />
+            <Item name="Uscator" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5 (16A)" doc="" shop="" />
+            <Item name="Cuptor" icon="Socket.png" section="sockets" type="generic" size="30" note="3x4 (16A)" doc="" shop="" />
+            <Item name="Frigider/Congelator" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Circuit de priza general" icon="Socket.png" section="sockets" type="generic" size="30" note="3x2.5" doc="" shop="" />
+        </Category>
+        <Category name="Security" icon="MotionSensor.png" section="security">
+            <Item name="Senzor Miscare pe tavan" icon="MotionSensor.png" section="sensors" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Senzor Miscare pe perete" icon="WallMotionSensor.png" section="sensors" type="generic" size="30" note="3x1.5" doc="" shop="" />
+        </Category>
+        <Category name="HVAC" icon="For_heating.png" section="hvac">
+            <Item name="Pentru Incalzire" icon="For_heating.png" section="hvac" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Pentru Incalzire/racire" icon="for_heating_and_cooling.png" section="hvac" type="generic" size="30" note="3x1.5" doc="" shop="" />
+            <Item name="Pentru Incalzire in pardoseala" icon="For_floor_heating.png" section="hvac" type="generic" size="30" note="3x1.5" doc="" shop="" />
+        </Category>
+        <Category name="IT" icon="RJ45Port.png" section="network">
+            <Item name="Hdmi" icon="HdmiPort.png"       section="network" type="generic" size="30" note="Hdmi" doc="" shop="" />
+            <Item name="Acces Point" icon="HDAccesPoint.svg" section="network" type="wifi" radius="1500" wallloss="35" size="30" note="Cat5E" doc="" shop="https://ultra.md/product/wi-fi-6-dual-band-access-point-ubiquiti-u6-plus-3-gbps-mimo-poe" />
+            <Item name="Retea RJ45" icon="RJ45Port.png" section="network" type="generic" size="30" note="Cat5E" doc="" shop="" />
+            <Item name="Retea RJ45 Dublu" icon="double_network.png" section="network" type="generic" size="30" note="2x Cat5E" doc="" shop="" />
+        </Category>
+        <Category name="ETC" icon="IesireCablu.png" section="other">
+            <Item name="Inserare goala" icon="NotVisible.png" section="other" type="generic" size="30" note="" doc="" shop="" />
+            <Item name="Iesire prin cablu" icon="IesireCablu.png" section="other" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Aragaz monofazat" icon="IesireCablu.png" section="other" type="generic" size="30" note="" doc="" shop="" />
+            <Item name="Aragaz trifazat" icon="IesireCablu.png" section="other" type="generic" size="30" note="5x2.5" doc="" shop="" />
+            <Item name="Cazan / Incalzitor de apa" icon="IesireCablu.png" section="other" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Consumator 1-faza" icon="IesireCablu.png" section="other" type="generic" size="30" note="3x2.5" doc="" shop="" />
+            <Item name="Consumator 3-faze" icon="IesireCablu.png" section="other" type="generic" size="30" note="5x2.5" doc="" shop="" />
+            <Item name="Tablou Electric" icon="electricalcabinet.svg" section="electrical" type="generic" size="50" note="3x4 mm2" doc="" shop="" />
+            <Item name="Cabinet Rack" icon="rackcabinet.svg" section="electrical" type="generic" size="50" note="3x2.5 + Cat5E" doc="" shop="" />
+        </Category>
+    </Category>
+</Library>

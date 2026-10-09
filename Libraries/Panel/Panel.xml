@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Electrical panel equipment for the panel pages. Sizes in mm (width x height of the front),
+     <HotPoint x y name> = terminals in mm from the top-left corner. type="rail" = DIN rail. -->
+<Library name="Panel" icon="Controller.svg">
+    <Category name="Panel equipment" icon="Controller.svg" section="electrical">
+        <Item name="MCB 1p" icon="MCB 1P.png" section="electrical" type="generic" width="18" height="86" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="10" name="1" />
+            <HotPoint x="9" y="78.3" name="2" />
+        </Item>
+        <Item name="MCB 2p" icon="MCB 2P.png" section="electrical" type="generic" width="36" height="86" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="10" name="1" />
+            <HotPoint x="27" y="10" name="3" />
+            <HotPoint x="9" y="78.3" name="2" />
+            <HotPoint x="27" y="78.3" name="4" />
+        </Item>
+        <Item name="MCB 3p" icon="MCB 3P.png" section="electrical" type="generic" width="54" height="86" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="10" name="1" />
+            <HotPoint x="27" y="10" name="3" />
+            <HotPoint x="45" y="10" name="5" />
+            <HotPoint x="9" y="78.3" name="2" />
+            <HotPoint x="27" y="78.3" name="4" />
+            <HotPoint x="45" y="78.3" name="6" />
+        </Item>
+        <Item name="MCB 4p" icon="MCB 4P.png" section="electrical" type="generic" width="72" height="86" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="10" name="1" />
+            <HotPoint x="27" y="10" name="3" />
+            <HotPoint x="45" y="10" name="5" />
+            <HotPoint x="63" y="10" name="7" />
+            <HotPoint x="9" y="78.3" name="2" />
+            <HotPoint x="27" y="78.3" name="4" />
+            <HotPoint x="45" y="78.3" name="6" />
+            <HotPoint x="63" y="78.3" name="8" />
+        </Item>
+        <Item name="Dif 2p" icon="DIF 2P.png" section="electrical" type="generic" width="36" height="85" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="9.9" name="1" />
+            <HotPoint x="27" y="9.9" name="N" />
+            <HotPoint x="9" y="77.4" name="2" />
+            <HotPoint x="27" y="77.4" name="N" />
+        </Item>
+        <Item name="RCBO 1P+N 16A" icon="RCBO_1PN.svg" section="electrical" type="generic" width="36" height="86" prefix="Q" note="" doc="" shop="">
+            <HotPoint x="9" y="7.3" name="1" />
+            <HotPoint x="27" y="7.3" name="N" />
+            <HotPoint x="9" y="78.7" name="2" />
+            <HotPoint x="27" y="78.7" name="N" />
+        </Item>
+        <Item name="Contactor 2P 25A" icon="Contactor_2P.svg" section="electrical" type="generic" width="36" height="86" prefix="K" note="" doc="" shop="">
+            <HotPoint x="6" y="7.3" name="A1" />
+            <HotPoint x="18" y="7.3" name="1" />
+            <HotPoint x="30" y="7.3" name="3" />
+            <HotPoint x="6" y="78.7" name="A2" />
+            <HotPoint x="18" y="78.7" name="2" />
+            <HotPoint x="30" y="78.7" name="4" />
+        </Item>
+        <Item name="Relay 1CO 24V" icon="Relay_1CO.svg" section="electrical" type="generic" width="18" height="86" prefix="K" note="" doc="" shop="">
+            <HotPoint x="5" y="7.3" name="A1" />
+            <HotPoint x="13" y="7.3" name="11" />
+            <HotPoint x="4" y="78.7" name="A2" />
+            <HotPoint x="9" y="78.7" name="12" />
+            <HotPoint x="14" y="78.7" name="14" />
+        </Item>
+        <Item name="Power supply 24V DC" icon="PSU_24V.svg" section="electrical" type="generic" width="72" height="90" prefix="T" note="" doc="" shop="">
+            <HotPoint x="12" y="7.3" name="L" />
+            <HotPoint x="24" y="7.3" name="N" />
+            <HotPoint x="36" y="7.3" name="PE" />
+            <HotPoint x="12" y="82.7" name="+V" />
+            <HotPoint x="24" y="82.7" name="+V" />
+            <HotPoint x="48" y="82.7" name="-V" />
+            <HotPoint x="60" y="82.7" name="-V" />
+        </Item>
+        <Item name="Surge protector 2P" icon="SPD_2P.svg" section="electrical" type="generic" width="36" height="86" prefix="F" note="" doc="" shop="">
+            <HotPoint x="9" y="7.3" name="L" />
+            <HotPoint x="27" y="7.3" name="N" />
+            <HotPoint x="18" y="78.7" name="PE" />
+        </Item>
+        <Item name="Energy meter 1P" icon="Meter_1P.svg" section="electrical" type="generic" width="36" height="86" prefix="P" note="" doc="" shop="">
+            <HotPoint x="9" y="7.3" name="L" />
+            <HotPoint x="27" y="7.3" name="N" />
+            <HotPoint x="9" y="78.7" name="L&#x27;" />
+            <HotPoint x="27" y="78.7" name="N" />
+        </Item>
+        <Item name="Smart controller 24V" icon="Controller.svg" section="electrical" type="generic" width="162" height="90" prefix="A" note="" doc="" shop="">
+            <HotPoint x="12" y="7.3" name="+24V" />
+            <HotPoint x="24" y="7.3" name="0V" />
+            <HotPoint x="40" y="7.3" name="Link+" />
+            <HotPoint x="52" y="7.3" name="Link-" />
+            <HotPoint x="150" y="7.3" name="LAN" />
+            <HotPoint x="12" y="82.7" name="DI1" />
+            <HotPoint x="24" y="82.7" name="DI2" />
+            <HotPoint x="36" y="82.7" name="DI3" />
+            <HotPoint x="48" y="82.7" name="DI4" />
+            <HotPoint x="60" y="82.7" name="DI5" />
+            <HotPoint x="72" y="82.7" name="DI6" />
+            <HotPoint x="84" y="82.7" name="DI7" />
+            <HotPoint x="96" y="82.7" name="DI8" />
+            <HotPoint x="126" y="82.7" name="AO1" />
+            <HotPoint x="138" y="82.7" name="AO2" />
+            <HotPoint x="150" y="82.7" name="GND" />
+        </Item>
+        <Item name="Relay extension 14 out" icon="RelayExt14.svg" section="electrical" type="generic" width="162" height="90" prefix="A" note="" doc="" shop="">
+            <HotPoint x="12" y="7.3" name="+24V" />
+            <HotPoint x="24" y="7.3" name="0V" />
+            <HotPoint x="40" y="7.3" name="Link+" />
+            <HotPoint x="52" y="7.3" name="Link-" />
+            <HotPoint x="10.0" y="82.7" name="O1" />
+            <HotPoint x="20.5" y="82.7" name="O2" />
+            <HotPoint x="31.0" y="82.7" name="O3" />
+            <HotPoint x="41.5" y="82.7" name="O4" />
+            <HotPoint x="52.0" y="82.7" name="O5" />
+            <HotPoint x="62.5" y="82.7" name="O6" />
+            <HotPoint x="73.0" y="82.7" name="O7" />
+            <HotPoint x="83.5" y="82.7" name="O8" />
+            <HotPoint x="94.0" y="82.7" name="O9" />
+            <HotPoint x="104.5" y="82.7" name="O10" />
+            <HotPoint x="115.0" y="82.7" name="O11" />
+            <HotPoint x="125.5" y="82.7" name="O12" />
+            <HotPoint x="136.0" y="82.7" name="O13" />
+            <HotPoint x="146.5" y="82.7" name="O14" />
+        </Item>
+        <Item name="Terminal block grey" icon="Terminal_Grey.svg" section="electrical" type="generic" width="6" height="48" prefix="X" note="" doc="" shop="">
+            <HotPoint x="3" y="5.3" name="" />
+            <HotPoint x="3" y="42.7" name="" />
+        </Item>
+        <Item name="Terminal block blue (N)" icon="Terminal_Blue.svg" section="electrical" type="generic" width="6" height="48" prefix="X" note="" doc="" shop="">
+            <HotPoint x="3" y="5.3" name="" />
+            <HotPoint x="3" y="42.7" name="" />
+        </Item>
+        <Item name="Terminal block PE" icon="Terminal_PE.svg" section="electrical" type="generic" width="6" height="48" prefix="X" note="" doc="" shop="">
+            <HotPoint x="3" y="5.3" name="" />
+            <HotPoint x="3" y="42.7" name="" />
+        </Item>
+        <Item name="DIN rail 35 mm" icon="DinRail.svg" section="electrical" type="rail" width="450" height="35" note="" doc="" shop="" />
+    </Category>
+</Library>

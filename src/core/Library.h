@@ -85,6 +85,8 @@ public:
     int  reload();
     bool loadFile(const QString &xmlPath);
     QStringList searchPaths() const;
+    // extra libraries of the user (kept when the app is updated): Documents/SmartHomePlanner/Libraries
+    static QString userLibraryPath();
     QStringList loadedFiles() const { return m_files; }
     QStringList errors() const { return m_errors; }    // XML files that could not be read
 

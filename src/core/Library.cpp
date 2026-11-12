@@ -7,6 +7,7 @@
 #include <QFileInfo>
 #include <QImageReader>
 #include <QRegularExpression>
+#include <QStandardPaths>
 #include <QSvgRenderer>
 #include <QDebug>
 
@@ -85,7 +86,22 @@ int Library::loadAll()
         if (!m_entries.empty())
             break;              // first location that contains libraries wins
     }
+    // the user's own libraries, next to the built-in ones: Documents/SmartHomePlanner/Libraries/<name>/<name>.xml
+    const QString user = userLibraryPath();
+    if (QDir(user).exists() && !m_files.isEmpty() && !QFileInfo(m_files.first()).absolutePath().startsWith(QDir(user).absolutePath())) {
+        const auto libDirs = QDir(user).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
+        for (const QFileInfo &libDir : libDirs) {
+            const auto files = QDir(libDir.absoluteFilePath()).entryInfoList({"*.xml", "*.stilib"}, QDir::Files, QDir::Name);
+            for (const QFileInfo &f : files)
+                loadFile(f.absoluteFilePath());
+        }
+    }
     return int(m_entries.size());
+}
+
+QString Library::userLibraryPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QStringLiteral("/SmartHomePlanner/Libraries");
 }
 
 void Library::addSection(const SectionDef &s)

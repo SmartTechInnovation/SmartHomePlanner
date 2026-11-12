@@ -52,11 +52,31 @@ if(Qt6Pdf_FOUND)
     target_link_libraries(shp_core PUBLIC Qt6::Pdf)
     target_compile_definitions(shp_core PUBLIC SHP_HAVE_QTPDF)
 endif()
-target_compile_definitions(shp_core PUBLIC
-    SHP_SOURCE_LIBRARY_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Libraries"
-    SHP_VERSION="${PROJECT_VERSION}")
+# Development builds read Libraries/ straight from the source tree (XML edits apply at once).
+# Release packages (tools/package_*.sh) turn this off, so they only use the libraries in the app.
+option(SHP_DEV_LIBRARY_PATH "Read Libraries/ from the source tree" ON)
+target_compile_definitions(shp_core PUBLIC SHP_VERSION="${PROJECT_VERSION}")
+if(SHP_DEV_LIBRARY_PATH)
+    target_compile_definitions(shp_core PUBLIC SHP_SOURCE_LIBRARY_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Libraries")
+endif()
 
 qt_add_executable(SmartHomePlanner WIN32 MACOSX_BUNDLE src/main.cpp)
+
+# ---- application identity (bundle, icon, version)
+if(APPLE)
+    set(SHP_ICNS ${CMAKE_CURRENT_SOURCE_DIR}/resources/app.icns)
+    set_source_files_properties(${SHP_ICNS} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+    target_sources(SmartHomePlanner PRIVATE ${SHP_ICNS})
+    set_target_properties(SmartHomePlanner PROPERTIES
+        MACOSX_BUNDLE_BUNDLE_NAME "Smart Home Planner"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "md.smartinnovation.smarthomeplanner"
+        MACOSX_BUNDLE_ICON_FILE app.icns
+        MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION}
+        MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+        MACOSX_BUNDLE_COPYRIGHT "Smart Tech Innovation")
+elseif(WIN32)
+    target_sources(SmartHomePlanner PRIVATE resources/app.rc)
+endif()
 file(GLOB SHP_ICONS CONFIGURE_DEPENDS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} resources/icons/*.svg)
 qt_add_resources(shp_core "app" PREFIX "/" FILES resources/app.svg ${SHP_ICONS})
 
@@ -99,8 +119,23 @@ if(NOT APPLE)
     install(DIRECTORY Libraries DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
 
+# copies the Qt libraries and plugins into the installed app (macdeployqt / windeployqt)
 qt_generate_deploy_app_script(
     TARGET SmartHomePlanner
     OUTPUT_SCRIPT deploy_script
     NO_UNSUPPORTED_PLATFORM_ERROR)
 install(SCRIPT ${deploy_script})
+
+# ---- packages:  cpack  (macOS: .dmg, Windows: .zip)
+set(CPACK_PACKAGE_NAME "SmartHomePlanner")
+set(CPACK_PACKAGE_VENDOR "Smart Tech Innovation")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Smart home installation planner")
+set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
+if(APPLE)
+    set(CPACK_GENERATOR "DragNDrop")
+    set(CPACK_DMG_VOLUME_NAME "Smart Home Planner")
+    set(CPACK_SYSTEM_NAME "macOS")
+else()
+    set(CPACK_GENERATOR "ZIP")
+endif()
+include(CPack)

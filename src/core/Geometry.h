@@ -38,6 +38,10 @@ QString formatArea(double cm2);
 // Orthogonal / 45 degree constraint relative to 'from'
 QPointF constrainAngle(const QPointF &from, const QPointF &to);
 
+// Open wall centre line with the last point pushed 'by' further along the last segment.
+// Stroked with a flat cap: the wall starts exactly at the first point and ends with a square end.
+QPolygonF extendWallEnd(QPolygonF pts, double by);
+
 } // namespace Geo
 
 #endif // GEOMETRY_H

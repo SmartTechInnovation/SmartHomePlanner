@@ -270,6 +270,22 @@ bool PlanScene::editPress(QGraphicsSceneMouseEvent *e)
             return true;
         }
     }
+    // 4. Wall tool: a click on a wall body selects it for editing (its corners get handles).
+    //    A click that snaps to a wall corner starts a new wall instead (Ctrl + click: see mousePressEvent).
+    if (m_tool == WallTool) {
+        SnapKind kind = NoSnap;
+        snapPoint(pos, nullptr, false, false, &kind);
+        if (kind != CornerSnap) {
+            if (QGraphicsItem *w = outlineAt(pos, ItemType::Wall)) {
+                clearSelection();
+                w->setSelected(true);
+                m_pressSelected = w;        // the double click that may follow must not add a corner
+                hideGuides();
+                e->accept();
+                return true;
+            }
+        }
+    }
     clearSelection();
     return false;
 }
@@ -1070,7 +1086,7 @@ void PlanScene::setTool(Tool t)
     m_editing = false;
     switch (t) {
     case WallTool:
-        emit statusMessage(tr("Wall: click points, double-click / Enter to finish, click the first point to close, Shift = 45°, Alt = no snap, Backspace = undo point, Esc = cancel. Double-click a wall to edit it."));
+        emit statusMessage(tr("Wall: click points, double-click / Enter to finish, click the first point to close, Shift = 45°, Alt = no snap, Backspace = undo point, Esc = cancel. Click a wall to edit it (drag its corners, double-click an edge = new corner); Ctrl + click on a wall starts a new wall there."));
         break;
     case RoomTool:
         emit statusMessage(tr("Room: click the corners – they snap to the wall faces (green square = corner, orange = on the wall). Click the first point or press Enter to close. Alt = no snap. Click inside a room to edit it."));
@@ -1346,10 +1362,13 @@ void PlanScene::updatePreview(const QPointF &cursor)
         pen.setColor(m_tool == CalibrateTool ? QColor(220, 90, 0) : QColor(0, 120, 215));
         emit statusMessage(tr("Distance: %1").arg(Geo::formatMeters(QLineF(c, cursor).length())));
     } else {
-        path.moveTo(m_drawPts.first());
-        for (int i = 1; i < m_drawPts.size(); ++i)
-            path.lineTo(m_drawPts[i]);
-        path.lineTo(cursor);
+        QPolygonF line = m_drawPts;
+        line << cursor;
+        if (m_tool == WallTool)     // like the finished wall: starts exactly at the first click
+            line = Geo::extendWallEnd(line, m_settings.wallThickness / 2);
+        path.moveTo(line.first());
+        for (int i = 1; i < line.size(); ++i)
+            path.lineTo(line[i]);
         if (m_tool == RoomTool && m_drawPts.size() >= 2)
             path.lineTo(m_drawPts.first());
         const double seg = QLineF(m_drawPts.last(), cursor).length();
@@ -1361,7 +1380,7 @@ void PlanScene::updatePreview(const QPointF &cursor)
         }
         emit statusMessage(msg);
         if (m_tool == WallTool) {
-            pen = QPen(QColor(70, 70, 70, 150), m_settings.wallThickness, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin);
+            pen = QPen(QColor(70, 70, 70, 150), m_settings.wallThickness, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin);
         } else if (m_tool == StripTool) {
             pen = QPen(QColor(255, 180, 0), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
         }
@@ -1373,6 +1392,7 @@ void PlanScene::updatePreview(const QPointF &cursor)
 void PlanScene::mousePressEvent(QGraphicsSceneMouseEvent *e)
 {
     m_lastMouse = e->scenePos();
+    m_pressSelected = nullptr;
     if (m_tool == SelectTool || e->button() == Qt::MiddleButton) {
         QGraphicsScene::mousePressEvent(e);
         return;
@@ -1387,7 +1407,11 @@ void PlanScene::mousePressEvent(QGraphicsSceneMouseEvent *e)
     }
     if (e->button() != Qt::LeftButton)
         return;
-    if ((m_tool == RoomTool || m_tool == WallTool) && m_drawPts.isEmpty() && editPress(e))
+    // Wall tool: Ctrl + click always starts a new wall, even on an existing one
+    const bool forceDraw = m_tool == WallTool && (e->modifiers() & Qt::ControlModifier);
+    if (forceDraw && m_drawPts.isEmpty())
+        clearSelection();
+    if ((m_tool == RoomTool || m_tool == WallTool) && m_drawPts.isEmpty() && !forceDraw && editPress(e))
         return;
 
     const QPointF p = toolPoint(e->scenePos(), e->modifiers());
@@ -1555,7 +1579,7 @@ void PlanScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *e)
             }
         const double tol = 10.0 / std::max(1e-6, m_viewScale);
         for (QGraphicsItem *it : selectedItems()) {
-            if (it->type() != want)
+            if (it->type() != want || it == m_pressSelected)   // just selected by this double click
                 continue;
             const double extra = want == ItemType::Wall ? static_cast<WallItem *>(it)->thickness() / 2 : 0;
             if (static_cast<PolyItem *>(it)->insertPointAt(e->scenePos(), tol + extra)) {

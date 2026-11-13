@@ -207,4 +207,17 @@ QPointF constrainAngle(const QPointF &from, const QPointF &to)
     return r.p2();
 }
 
+QPolygonF extendWallEnd(QPolygonF pts, double by)
+{
+    for (int i = pts.size() - 1; i > 0; --i) {
+        const QPointF d = pts.last() - pts[i - 1];
+        const double len = std::hypot(d.x(), d.y());
+        if (len > 1e-6) {
+            pts.last() += d / len * by;
+            break;
+        }
+    }
+    return pts;
+}
+
 } // namespace Geo

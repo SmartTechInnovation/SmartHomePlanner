@@ -247,6 +247,7 @@ private:
     bool editPress(QGraphicsSceneMouseEvent *e);     // Room / Wall tool: click on an existing outline
     QGraphicsItem *outlineAt(const QPointF &scenePos, int itemType) const;
     bool m_editing = false;
+    QGraphicsItem *m_pressSelected = nullptr;   // outline selected by the last press (Wall tool)
     bool m_showRoomNames = true;
     bool m_showRoomAreas = true;
 

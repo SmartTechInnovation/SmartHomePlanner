@@ -22,19 +22,22 @@ void WallItem::setThickness(double t)
 
 QPainterPath WallItem::bodyPath() const
 {
-    QPainterPath line;
     if (m_pts.isEmpty())
-        return line;
-    line.moveTo(m_pts.first());
-    for (int i = 1; i < m_pts.size(); ++i)
-        line.lineTo(m_pts[i]);
-    if (m_closed && m_pts.size() > 2)
+        return QPainterPath();
+    QPolygonF pts = m_pts;
+    if (!m_closed)
+        pts = Geo::extendWallEnd(pts, m_thickness / 2);   // flat at the start, half a thickness past the end
+    QPainterPath line;
+    line.moveTo(pts.first());
+    for (int i = 1; i < pts.size(); ++i)
+        line.lineTo(pts[i]);
+    if (m_closed && pts.size() > 2)
         line.closeSubpath();
     QPainterPathStroker st;
     st.setWidth(m_thickness);
     st.setJoinStyle(Qt::MiterJoin);
     st.setMiterLimit(4);
-    st.setCapStyle(m_closed ? Qt::FlatCap : Qt::SquareCap);
+    st.setCapStyle(Qt::FlatCap);
     return st.createStroke(line).simplified();
 }
 
@@ -61,7 +64,9 @@ QVector<QLineF> WallItem::obstacleEdges() const
         const QPointF dir = (b - a) / l.length();
         const QPointF nrm(-dir.y() * h, dir.x() * h);
         // extend a little along the wall so corners have no gaps
-        const QPointF a2 = a - dir * h;
+        // (not before the first point of an open wall: the wall starts exactly there)
+        const bool start = !m_closed && i == 0;
+        const QPointF a2 = start ? a : a - dir * h;
         const QPointF b2 = b + dir * h;
         edges << QLineF(a2 + nrm, b2 + nrm) << QLineF(a2 - nrm, b2 - nrm)
               << QLineF(a2 + nrm, a2 - nrm) << QLineF(b2 + nrm, b2 - nrm);

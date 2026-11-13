@@ -1437,8 +1437,8 @@ Operația nu poate fi anulată.</translation>
     </message>
     <message>
         <location filename="../src/scene/PlanScene.cpp" line="1073" />
-        <source>Wall: click points, double-click / Enter to finish, click the first point to close, Shift = 45°, Alt = no snap, Backspace = undo point, Esc = cancel. Double-click a wall to edit it.</source>
-        <translation>Perete: click pe puncte, dublu-click / Enter pentru a termina, click pe primul punct pentru a închide, Shift = 45°, Alt = fără aliniere, Backspace = anulează punctul, Esc = renunță. Dublu-click pe un perete pentru a-l edita.</translation>
+        <source>Wall: click points, double-click / Enter to finish, click the first point to close, Shift = 45°, Alt = no snap, Backspace = undo point, Esc = cancel. Click a wall to edit it (drag its corners, double-click an edge = new corner); Ctrl + click on a wall starts a new wall there.</source>
+        <translation>Perete: click pe puncte, dublu-click / Enter pentru a termina, click pe primul punct pentru a închide, Shift = 45°, Alt = fără aliniere, Backspace = anulează punctul, Esc = renunță. Click pe un perete pentru a-l edita (trage de colțuri, dublu-click pe o latură = colț nou); Ctrl + click pe un perete începe un perete nou acolo.</translation>
     </message>
     <message>
         <location filename="../src/scene/PlanScene.cpp" line="1076" />

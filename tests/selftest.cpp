@@ -556,6 +556,47 @@ private slots:
         QVERIFY(!(w->flags() & QGraphicsItem::ItemIsSelectable));
     }
 
+    void wallStartsAtClickAndOneClickEdits()
+    {
+        Project p;
+        PlanScene *s = p.current();
+        PlanView v(s);
+        v.resize(800, 600);
+        v.show();
+        QVERIFY(QTest::qWaitForWindowExposed(&v));
+        v.resetTransform();
+        v.centerOn(200, 150);
+        s->setViewScale(1);
+        auto at = [&](double x, double y) { return v.mapFromScene(QPointF(x, y)); };
+        s->setTool(PlanScene::WallTool);
+        QTest::mouseClick(v.viewport(), Qt::LeftButton, {}, at(0, 0));
+        QTest::mouseClick(v.viewport(), Qt::LeftButton, {}, at(400, 0));
+        QTest::mouseDClick(v.viewport(), Qt::LeftButton, {}, at(400, 0));
+        QCOMPARE(s->walls().size(), 1);
+        WallItem *w = s->walls().first();
+        // the body starts exactly at the first click (flat), the end goes half a thickness further
+        const QRectF b = w->mapToScene(w->shape()).boundingRect();
+        QVERIFY(qAbs(b.left()) < 0.01);
+        QVERIFY(qAbs(b.right() - 410) < 0.01);
+        QTest::qWait(600);
+        // one click on the wall selects it (no new wall), its end can be dragged
+        QTest::mouseClick(v.viewport(), Qt::LeftButton, {}, at(200, 3));
+        QVERIFY(w->isSelected());
+        QVERIFY(!s->isDrawing());
+        QTest::qWait(600);
+        QTest::mousePress(v.viewport(), Qt::LeftButton, {}, at(400, 0));
+        for (int i = 1; i <= 4; ++i)
+            QTest::mouseMove(v.viewport(), at(400, 25.0 * i));
+        QTest::mouseRelease(v.viewport(), Qt::LeftButton, {}, at(400, 100));
+        QVERIFY(QLineF(w->scenePoints().at(1), QPointF(400, 100)).length() < 1.5);
+        QCOMPARE(s->walls().size(), 1);
+        QTest::qWait(600);
+        // Ctrl + click on the wall starts a new one
+        QTest::mouseClick(v.viewport(), Qt::LeftButton, Qt::ControlModifier, at(100, 0));
+        QVERIFY(s->isDrawing());
+        s->cancelDrawing();
+    }
+
     void groupsLinkElements()
     {
         Project p;
